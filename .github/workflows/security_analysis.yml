@@ -10,20 +10,21 @@ on:
     - cron: "0 6 * * *"
 
 jobs:
-  codeql:
-    name: CodeQL
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2.4.0
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v1
-        with:
-          languages: go
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v1
+# CodeQL can't actually scan these minimal repos
+#  codeql:
+#    name: CodeQL
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v2.4.0
+#
+#      - name: Initialize CodeQL
+#        uses: github/codeql-action/init@v1
+#        with:
+#          languages: go
+#
+#      - name: Perform CodeQL Analysis
+#        uses: github/codeql-action/analyze@v1
 
   trivy:
     name: Trivy
